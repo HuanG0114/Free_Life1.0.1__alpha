@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/home_drawer"
+            android:icon="@drawable/ic_baseline_face_24"
+            android:title="個人資訊"/>
+        <item android:id="@+id/face_drawer"
+            android:icon="@drawable/ic_baseline_lock_24"
+            android:title="修改密碼"/>
+
+    </group>
+
+    <item android:title="基本功能">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/photo"
+                    android:icon="@drawable/ic_baseline_image_search_24"
+                    android:title="我的相簿"/>
+                <item android:id="@+id/about"
+                    android:icon="@drawable/ic_baseline_library_books_24"
+                    android:title="我的文章"/>
+
+
+            </group>
+        </menu>
+
+
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/aaa"
+            android:icon="@drawable/ic_baseline_people_24"
+            android:title="好友"/>
+        <item android:id="@+id/bbb"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="設定"/>
+
+    </group>
+
+
+</menu>
