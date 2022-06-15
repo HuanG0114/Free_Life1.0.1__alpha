@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //ini popup
         intPopup();
 
-        //側邊選單
+        //側邊選單相簿功能
         navigationView =(NavigationView) findViewById(R.id.drawer_ad) ;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -67,10 +67,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (item.getItemId()){
                     case R.id.photo:
                         Intent intent = new Intent(MainActivity.this,My_Gallery.class);
-                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                         startActivity(intent);
-                        //break;
+                        return true;
+
+                    case R.id.home_drawer:
+                        Intent intent1 = new Intent(MainActivity.this,My_page.class);
+                        startActivity(intent1);
+                        return true;
+
+                    case R.id.book:
+                        Intent intent2 = new Intent(MainActivity.this,bolg_post.class);
+                        startActivity(intent2);
+                        return true;
+
+
                 }
+
                 return false;
             }
         });
@@ -105,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         startActivity(new Intent(getApplicationContext(),Publish_page.class));
                         overridePendingTransition(0,0);
                         return true;
+
 
 
 
