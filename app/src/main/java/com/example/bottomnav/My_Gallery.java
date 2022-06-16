@@ -1,7 +1,7 @@
 package com.example.bottomnav;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.annotation.Nullable;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ public class My_Gallery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_gallery);
 
-        picture=(ImageView)findViewById(R.id.imageView);
+        picture=(ImageView)findViewById(R.id.imageView1);
         add=(Button)findViewById(R.id.btnAdd);
         next=(Button)findViewById(R.id.btnNext);
         back=(Button)findViewById(R.id.btnBack);
@@ -39,5 +39,24 @@ public class My_Gallery extends AppCompatActivity {
                 picture.setImageURI(uriLIst.get(position));
             }
         });
+        back.setOnClickListener(view -> {
+            for (int i = uriLIst.size()-1; i>0; i--){
+                position = i;
+                picture.setImageURI(uriLIst.get(position));
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == PICK_IMAGE) {
+            if (data != null) {
+                Uri imageURi = data.getData();
+                uriLIst.add(imageURi);
+                picture.setImageURI(uriLIst.get(position));
+            }
+        }
     }
 }

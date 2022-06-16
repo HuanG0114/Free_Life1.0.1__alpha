@@ -10,6 +10,7 @@
     <color name="white_gray">#E0E0E0</color>
     <color name="white_green">#D1E9E9</color>
     <color name="candy_green">#66F9B0</color>
-    #66F9B0
+    <color name="greycolor">#c2c2c2</color>
+
 
 </resources>
